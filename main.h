@@ -5,7 +5,15 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+typedef struct spe
+{
+	char spe;
+	int (*f)(va_list speci);
+} spe_t;
+
 int _putchar(char c);
 int _printf(const char *format, ...);
+int get_spe(const char *format, va_list speci);
+int print_percentage(va_list speci __attribute__((unused)))
 
 #endif
