@@ -14,6 +14,6 @@ typedef struct spe
 int _putchar(char c);
 int _printf(const char *format, ...);
 int get_spe(const char *format, va_list speci);
-int print_percentage(va_list speci __attribute__((unused)))
+int print_percentage(va_list speci __attribute__((unused)));
 
 #endif
