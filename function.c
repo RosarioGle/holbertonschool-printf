@@ -8,14 +8,11 @@
 
 void _recur_int(int n)
 {
-	unsigned int a;
-
-	a = n;
-	if (a / 10)
+	if (n / 10)
 	{
-		_recur_int(a / 10);
+		_recur_int(n / 10);
 	}
-	_putchar(a % 10 + '0');
+	_putchar(n % 10 + '0');
 }
 
 /**
@@ -30,22 +27,19 @@ int print_decimal(va_list speci)
 {
 	int len = 1;
 	int cpy;
-	unsigned int n;
-
-	n = va_arg(speci, int);
-	cpy = n;
+	cpy = va_arg(speci, int);
 	if (cpy < 0)
 	{
-		_putchar('-');
 		cpy = -cpy;
-		n = cpy;
-		len++;
-	}
-	for (; n > 9; n /= 10)
-	{
+		_putchar('-');
 		len++;
 	}
 	_recur_int(cpy);
+	while (cpy > 9)
+	{
+		cpy = cpy / 10;
+		len++;
+	}
 	return (len);
 }
 
