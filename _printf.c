@@ -15,6 +15,8 @@ int get_spe(const char *format, va_list speci)
 	int len = 0, b = 0;
 	spe_t spc[] = {
 		{'%', print_percentage},
+		{'d', print_decimal},
+		{'i', print_decimal},
 		{'\0', NULL}
 	};
 	while (format != NULL && format[b] != '\0')
