@@ -25,11 +25,11 @@ FORMAT SPECIFIERS
 	+---------------+---------------------------------------------------------+
 	| Specifier     | 	              Description			  |
 	+---------------+---------------------------------------------------------+
-	|     %c	| Display a single character				  |
-	|     %s	| Display a string of characters			  |
-	|     %d	| Display a signed decimal 				  |
-	|     %i	| Display a signed integer				  |
-	|     %%	| Display a character '%'				  |
+	|     %c	| Print a single character				  |
+	|     %s	| Print a string of characters				  |
+	|     %d	| Print a decimal					  |
+	|     %i	| Print an integer					  |
+	|     %%	| Print a character '%'					  |
 	+---------------+---------------------------------------------------------+
 
 EXAMPLES OF USAGE:
