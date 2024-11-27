@@ -1,22 +1,22 @@
 #include "main.h"
 
 /**
- * _printf - print all
+ * _printf - a function that simulates printf
  *
- * @format: the character string
+ * @format: a string of characters
  *
- * Return: the number of character printed
+ * Return: the number of characters printed
  */
 
 int _printf(const char *format, ...)
 {
-	int len = 0;
-	va_list speci;
+	int length = 0;
+	va_list ap;
 
-	va_start(speci, format);
+	va_start(ap, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	len = get_spe(format, speci);
-	va_end(speci);
-	return (len);
+	length = get_specifier(format, ap);
+	va_end(ap);
+	return (length);
 }
