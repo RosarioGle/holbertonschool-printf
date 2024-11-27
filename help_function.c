@@ -11,3 +11,23 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+
+/**
+ * _strlen - get the length of a string
+ *
+ * @s: the string
+ *
+ * Return: the length of a string
+ */
+
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s)
+	{
+		s++;
+		len++;
+	}
+	return (len);
+}
