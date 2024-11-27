@@ -23,7 +23,7 @@ int get_spe(const char *format, va_list speci)
 	};
 	while (format != NULL && format[b] != '\0')
 	{
-		if (format[b] == '%' && (format[b + 1] != 'K' && format[b + 1] != '!'))
+		if (format[b] == '%')
 		{
 			b++;
 			a = 0;
