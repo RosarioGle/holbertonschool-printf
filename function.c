@@ -70,6 +70,7 @@ int print_decimal(va_list speci)
 {
 	int len = 1;
 	int cpy;
+
 	cpy = va_arg(speci, int);
 	if (cpy < 0)
 	{
@@ -94,9 +95,9 @@ int print_decimal(va_list speci)
 
 void _recur_int(int n)
 {
-        if (n / 10)
-        {
-                _recur_int(n / 10);
-        }
-        _putchar(n % 10 + '0');
+	if (n / 10)
+	{
+		_recur_int(n / 10);
+	}
+	_putchar(n % 10 + '0');
 }
