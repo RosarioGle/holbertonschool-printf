@@ -4,19 +4,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
 
-typedef struct spe
+typedef struct handler
 {
-	char spe;
-	int (*f)(va_list speci);
-} spe_t;
+	char specifier;
+	int (*function)(va_list ap);
+} handler_t;
 
-int _putchar(char c);
-int _strlen(char *s);
 int _printf(const char *format, ...);
-int get_spe(const char *format, va_list speci);
-int print_percentage(va_list speci __attribute__((unused)));
-int print_char(va_list speci);
-int print_string(va_list speci);
+int get_specifier(const char *format, va_list ap);
+int print_percentage(va_list ap __attribute__((unused)));
+int print_char(va_list ap);
+int print_string(va_list ap);
 
 #endif

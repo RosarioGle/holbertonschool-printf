@@ -1,43 +1,44 @@
 #include "main.h"
 
 /**
- * get_spe - selects the corresponding function
+ * get_specifier - Processes a format string and prints output
+ * based on the corresponding format specifiers
+ * 
+ * @format: The format string containing characters and specifiers
+ * @ap: The list of arguments for the format specifiers
  *
- * @format: the specifier string
- * @speci: the list
- *
- * Return: the numer of character printed
+ * Return: The total number of characters printed.
  */
 
-int get_spe(const char *format, va_list speci)
+int get_specifier(const char *format, va_list ap)
 {
-	int a;
-	int len = 0, b = 0;
-	spe_t spc[] = {
+	int length = 0, i = 0, j;
+	handler_t specifiers[] = { // specifiers is an array of handler_t structures
 		{'%', print_percentage},
 		{'c', print_char},
 		{'s', print_string},
-		{'\0', NULL}
+		{'\0', NULL} // indicates the end
 	};
-	while (format != NULL && format[b] != '\0')
+
+	while (format != NULL && format[i] != '\0')
 	{
-		if (format[b] == '%' && (format[b + 1] != 'K' && format[b + 1] != '!'))
+		if (format[i] == '%')
 		{
-			b++;
-			a = 0;
-			while (spc[a].spe != '\0')
+			i++; // check character after %
+			j = 0;
+			while (specifiers[j].specifier != '\0')
 			{
-				if (spc[a].spe == format[b])
-					len += spc[a].f(speci);
-				a++;
+				if (specifiers[j].specifier == format[i]) // if the specifier matches, the associated function is called
+					length += specifiers[j].function(ap);
+				j++; // increment specifier  up to '\0' or a matching specifier
 			}
 		}
-		else
+		else // the character is not %
 		{
-			_putchar(format[b]);
-			len++;
+			write(1, &format[i], 1);
+			length++;
 		}
-		b++;
+		i++;
 	}
-	return (len);
+	return (length);
 }
