@@ -6,6 +6,14 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+/**
+ * struct spe - structur that determine the conversion specifier
+ * and the corresponding function
+ *
+ * @spe: the conversion specifier
+ * @f: the function pointer that calls the corresponding function
+ */
+
 typedef struct spe
 {
 	char spe;
