@@ -47,7 +47,7 @@ int main(void)
     int nombre = 125;
 
     _printf("Decimal: %d\nInteger: %i\n", nombre, nombre);
-    return (0);
+    return (0);esting
 }
 ```
 STDOUT
@@ -67,6 +67,32 @@ gcc -Wall -Wextra -Werror -pedantic _printf.c functions.c test.c -o test
 2. Run the test:
 ./test
 
+3. Example:
+```c
+#include "main.h"
+
+int main(void)
+{
+    int result;
+
+	printf("-----------------------------\n");
+
+	result = _printf("Percent: %%\n");
+    printf("Expected output: Percent: %%\n");
+    printf("Characters printed by _printf: %d\n", result);
+	printf("-----------------------------\n");
+
+    result = _printf("Character: %c\n", 'A');
+    printf("Expected output: Character: A\n");
+    printf("Characters printed by _printf: %d\n", result);
+	printf("-----------------------------\n");
+
+    result = _printf("String: %s\n", "Hello, world!");
+    printf("Expected output: String: Hello, world!\n");
+    printf("Characters printed by _printf: %d\n", result);
+	printf("-----------------------------\n");
+
+```
 ## Flowchart
 
 
