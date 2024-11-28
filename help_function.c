@@ -38,8 +38,8 @@ int _strlen(char *s)
  * @spe: the unknown specifier
  */
 
-void print_unknown (char c)
+void print_unknown(char spe)
 {
 	_putchar('%');
-	_putchar(c);
+	_putchar(spe);
 }

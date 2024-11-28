@@ -23,7 +23,7 @@ typedef struct handler
 int _putchar(char c);
 int _printf(const char *format, ...);
 int get_spe(const char *format, va_list args);
-void print_unknown (char c);
+void print_unknown(char c);
 int print_char(va_list args);
 int print_string(va_list args);
 int _strlen(char *s);
