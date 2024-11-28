@@ -21,19 +21,14 @@ int get_spe(const char *format, va_list args)
 		{'i', print_decimal},
 		{'\0', NULL}
 	};
-	/* Iterate through the format string */
 	while (format[b] != '\0')
 	{
-		/* Check if the current character is '%' */
 		if (format[b] == '%')
 		{
-			/* check character after % */
 			b++;
 			a = 0;
-			/* Search for the matching specifier in the specifiers array */
 			while (specifiers[a].specifier != '\0')
 			{
-				/* if the specifier matches, the associated function is called */
 				if (specifiers[a].specifier == format[b])
 				{
 					len += specifiers[a].function(args);
@@ -43,19 +38,14 @@ int get_spe(const char *format, va_list args)
 			}
 			if (specifiers[a].specifier == '\0')
 			{
-				_putchar('%');
-				_putchar(format[b]);
+				print_unknown(format[b]);
 				len += 2;
 			}
-
-		}
-		/* If the character is not a '%', write it directly */
-		else
+		} else
 		{
 			_putchar(format[b]);
 			len++;
 		}
-		/* Move to the next character in the format string */
 		b++;
 	}
 	return (len);

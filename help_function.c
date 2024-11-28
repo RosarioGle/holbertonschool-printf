@@ -31,3 +31,15 @@ int _strlen(char *s)
 	}
 	return (len);
 }
+
+/**
+ * print_unknown - print unknown specifiers
+ *
+ * @spe: the unknown specifier
+ */
+
+void print_unknown (char c)
+{
+	_putchar('%');
+	_putchar(c);
+}
