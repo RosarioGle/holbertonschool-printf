@@ -11,7 +11,7 @@
 
 int get_spe(const char *format, va_list args)
 {
-	int a;
+	int a, c;
 	int len = 0, b = 0;
 	handler_t specifiers[] = {
 		{'c', print_char},
@@ -24,6 +24,7 @@ int get_spe(const char *format, va_list args)
 	/* Iterate through the format string */
 	while (format[b] != '\0')
 	{
+		c = 0;
 		/* Check if the current character is '%' */
 		if (format[b] == '%')
 		{
@@ -35,9 +36,18 @@ int get_spe(const char *format, va_list args)
 			{
 				/* if the specifier matches, the associated function is called */
 				if (specifiers[a].specifier == format[b])
+				{
 					len += specifiers[a].function(args);
+					break;
+				}
 				a++;
 			}
+			if (specifiers[a].specifier == '\0')
+			{
+				_putchar('%');
+				_putchar(format[b]);
+			}
+
 		}
 		/* If the character is not a '%', write it directly */
 		else
@@ -47,6 +57,7 @@ int get_spe(const char *format, va_list args)
 		}
 		/* Move to the next character in the format string */
 		b++;
+		c++;
 	}
 	return (len);
 }
