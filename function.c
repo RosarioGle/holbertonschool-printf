@@ -3,7 +3,7 @@
 /**
  * print_char - print a char
  *
- * @speci: the list
+ * @args: the list
  *
  * Return: the number of character printed
  */
@@ -20,7 +20,7 @@ int print_char(va_list args)
 /**
  * print_string - print a string
  *
- * @speci: the list
+ * @args: the list
  *
  * Return: the number of character printed
  */
@@ -45,7 +45,7 @@ int print_string(va_list args)
 /**
  * print_percentage - print the percentage chracter
  *
- * @speci: the list
+ * @args: the list
  *
  * Return: the number of character printed
  */
@@ -61,7 +61,7 @@ int print_percentage(va_list args __attribute__((unused)))
 /**
  * print_decimal - print a decimal
  *
- * @speci: the list
+ * @args: the list
  *
  * Return: the number of character printed
  */

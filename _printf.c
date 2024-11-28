@@ -1,6 +1,50 @@
 #include "main.h"
 
 /**
+ * get_spe - selects the corresponding function
+ *
+ * @format: the specifier string
+ * @args: the list
+ *
+ * Return: the numer of character printed
+ */
+
+int get_spe(const char *format, va_list args)
+{
+	int a;
+	int len = 0, b = 0;
+	handler_t specifiers[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'%', print_percentage},
+		{'d', print_decimal},
+		{'i', print_decimal},
+		{'\0', NULL}
+	};
+	while (format != NULL && format[b] != '\0')
+	{
+		if (format[b] == '%')
+		{
+			b++;
+			a = 0;
+			while (specifiers[a].specifier != '\0')
+			{
+				if (specifiers[a].specifier == format[b])
+					len += specifiers[a].function(args);
+				a++;
+			}
+		}
+		else
+		{
+			_putchar(format[b]);
+			len++;
+		}
+		b++;
+	}
+	return (len);
+}
+
+/**
  * _printf - print all
  *
  * @format: the character string
@@ -10,45 +54,13 @@
 
 int _printf(const char *format, ...)
 {
-	int len = 0, i = 0;
-	int j;
+	int len = 0;
 	va_list args;
 
-	handler_t specifiers[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'%', print_percentage},
-		{'d', print_decimal},
-                {'i', print_decimal},
-		{'\0', NULL}
-	};
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	while (format[i] != '\0')
-	{
-		if (format[i] == '%')
-		{
-			i++;
-			j = 0;
-			while (specifiers[j].specifier != '\0' && specifiers[j].specifier != format[i])
-				j++;
-			if (specifiers[j].specifier == format[i])
-				len += specifiers[j].function(args);
-			else
-			{
-				_putchar('%');
-				_putchar(format[i]);
-				len += 2;
-			}
-		}
-		else
-		{
-			_putchar(format[i]);
-			len++;
-		}
-		i++;
-	}
+	len = get_spe(format, args);
 	va_end(args);
 	return (len);
 }
