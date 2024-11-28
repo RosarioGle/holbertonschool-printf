@@ -53,10 +53,10 @@ int main(void)
     int nombre = 125;
 
     _printf("Decimal: %d\nInteger: %i\n", nombre, nombre);
-    return (0);esting
+    return (0);
 }
 ```
-STDOUT
+STDOUT:DE 
 ```makefile
 Decimal: 125
 Integer: 125
