@@ -82,8 +82,8 @@ int main(void)
     printf("Characters printed by _printf: %d\n", result);
 	printf("-----------------------------\n");
 
-    result = _printf("String: %s\n", "Hello, world!");
-    printf("Expected output: String: Hello, world!\n");
+    result = _printf("String: %s\n", "Hell, world!");
+    printf("Expected output: String: Hell, world!\n");
     printf("Characters printed by _printf: %d\n", result);
 	printf("-----------------------------\n");
 ```
@@ -94,8 +94,8 @@ Character: A
 Expected output: Character: A
 Characters printed by _printf: 13
 -----------------------------
-String: Hello, world!
-Expected output: String: Hello, world!
+String: Hell, world!
+Expected output: String: Hell, world!
 Characters printed by _printf: 22
 -----------------------------
 ```
