@@ -15,17 +15,17 @@ This project implements a custom version of the `_printf` function in C, simulat
 ## Installation
 1. Clone the repository:
 ```bash
-$ git clone https://github.com/RosarioGle/holbertonschool-printf.git
+git clone https://github.com/RosarioGle/holbertonschool-printf.git
 ```
 
 2. Navigate to the project folder with:
 ```bash
-$ cd holbertonschool-printf
+cd holbertonschool-printf
 ```
 
 3. Compile the project folder with:
 ```bash
-$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 ```
 
 ## Examples
@@ -69,12 +69,12 @@ https://github.com/RosarioGle/holbertonschool-printf/blob/rosario/man_3_printf
 ## Testing
 1. Compile the files with the tests included:
 ```bash
-$ gcc -Wall -Wextra -Werror -pedantic _printf.c functions.c test.c -o test
+gcc -Wall -Wextra -Werror -pedantic _printf.c functions.c test.c -o test
 ```
 
 2. Run the test:
 ```bash
-$ ./test
+./test
 ```
 
 3. Example of test:
@@ -114,12 +114,12 @@ You can use valgrind to check for potential memory leaks in your _printf program
 
 Compile the files:
 ```bash
-$ gcc -Wall -Wextra -Werror -pedantic _printf.c functions.c test.c -o my_printf
+gcc -Wall -Wextra -Werror -pedantic _printf.c functions.c test.c -o my_printf
 ```
 
 To test printing a character:
 ```bash
-$ valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./my_printf 'Character: A'
+valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./my_printf 'Character: A'
 ```
 Expected Output:
 ```yaml
