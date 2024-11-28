@@ -9,7 +9,6 @@
  *
  * Return: the number of character printed
  */
-/* Iterate through the format string */
 
 int get_specifier(const char *format, va_list ap)
 {
@@ -20,7 +19,7 @@ int get_specifier(const char *format, va_list ap)
 		{'s', print_string},
 		{'\0', NULL}
 	};
-
+	/* Iterate through the format string */
 	while (format[i] != '\0')
 	{
 		/* Check if the current character is '%' */

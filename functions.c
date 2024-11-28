@@ -2,6 +2,10 @@
 
 /**
  * print_percentage - print the percentage character
+ * 
+ * @ap: a list of arguments
+ * 
+ * Return: the 
  */
 
 int print_percentage(va_list ap __attribute__((unused)))
@@ -15,11 +19,16 @@ int print_percentage(va_list ap __attribute__((unused)))
 
 /**
  * print_char - print a char
+ * 
+ * @ap: a list of arguments
+ * (ap means argument pointer)
+ * 
+ * Return: 
  */
-int print_char(va_list ap) // ap means argument pointer
+int print_char(va_list ap)
 {
 	int length = 1;
-	// store an argument of type int from the variadic list ap
+	/* Store an argument of type int from the variadic list ap */
 	char c = va_arg(ap, int);
 
 	write(1, &c, length);
@@ -29,6 +38,10 @@ int print_char(va_list ap) // ap means argument pointer
 
 /**
  * print_string - print a string
+ * 
+ * @ap: a list of argument
+ * 
+ * Return: 
  */
 int print_string(va_list ap)
 {
@@ -38,7 +51,7 @@ int print_string(va_list ap)
 	if (str == NULL)
 		str = "(nil)";
 
-	// calculate the length of the string
+	/* Calculate the length of the string */
 	while (str[length])
 		length++;
 
