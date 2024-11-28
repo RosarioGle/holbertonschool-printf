@@ -33,8 +33,10 @@ int main(void)
     return (0);
 }
 ```
-Output:
+STDOUT:
+```makefile
 Hello, B! Welcome to School.
+```
 
 Another usage of `_printf`:
 ```c
@@ -48,9 +50,11 @@ int main(void)
     return (0);
 }
 ```
-Output:
+STDOUT
+```makefile
 Decimal: 125
 Integer: 125
+```
 
 ## Man page
 Please visit this page:
@@ -58,10 +62,10 @@ https://github.com/RosarioGle/holbertonschool-printf/blob/rosario/man_3_printf
 
 ## Testing
 1. Compile the files with the tests included:
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c tests/*.c -o test_function
+gcc -Wall -Wextra -Werror -pedantic _printf.c functions.c test.c -o test
 
 2. Run the test:
-./test_function
+./test
 
 ## Flowchart
 
