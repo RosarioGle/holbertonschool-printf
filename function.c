@@ -34,16 +34,25 @@ int print_string(va_list args)
 	int length = 0;
 	int i;
 
-	if (!str)
-		str = "(null)";
+	if (str == NULL)
+	{
+		_putchar('(');
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
+		length = 6;
+		return (length);
+	}
 	else
 	{
 		/* calculate the length of the string */
 		length = _strlen(str);
 		for (i = 0; i < length; i++)
 			_putchar(str[i]);
+		return (length);
 	}
-	return (length);
 }
 
 /**
