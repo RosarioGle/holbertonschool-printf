@@ -4,16 +4,16 @@
  * get_spe - selects the corresponding function
  *
  * @format: the specifier string
- * @speci: the list
+ * @args: the list
  *
  * Return: the numer of character printed
  */
 
-int get_spe(const char *format, va_list speci)
+int get_spe(const char *format, va_list args)
 {
 	int a;
 	int len = 0, b = 0;
-	spe_t spc[] = {
+	handler_t specifiers[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percentage},
@@ -21,16 +21,16 @@ int get_spe(const char *format, va_list speci)
 		{'i', print_decimal},
 		{'\0', NULL}
 	};
-	while (format != NULL && format[b] != '\0')
+	while (format[b] != '\0')
 	{
 		if (format[b] == '%')
 		{
 			b++;
 			a = 0;
-			while (spc[a].spe != '\0')
+			while (specifiers[a].specifier != '\0')
 			{
-				if (spc[a].spe == format[b])
-					len += spc[a].f(speci);
+				if (specifiers[a].specifier == format[b])
+					len += specifiers[a].function(args);
 				a++;
 			}
 		}
@@ -55,12 +55,12 @@ int get_spe(const char *format, va_list speci)
 int _printf(const char *format, ...)
 {
 	int len = 0;
-	va_list speci;
+	va_list args;
 
-	va_start(speci, format);
+	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	len = get_spe(format, speci);
-	va_end(speci);
+	len = get_spe(format, args);
+	va_end(args);
 	return (len);
 }
