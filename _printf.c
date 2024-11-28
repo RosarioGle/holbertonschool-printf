@@ -46,6 +46,7 @@ int get_spe(const char *format, va_list args)
 			{
 				_putchar('%');
 				_putchar(format[b]);
+				len++;
 			}
 
 		}
