@@ -35,7 +35,7 @@ int print_string(va_list args)
 	int i;
 
 	if (!str)
-		str = "(nil)";
+		str = "(null)";
 	else
 		/* calculate the length of the string */
 		length = _strlen(str);
