@@ -37,12 +37,12 @@ int print_string(va_list args)
 	if (!str)
 		str = "(null)";
 	else
+	{
 		/* calculate the length of the string */
 		length = _strlen(str);
-
-	for (i = 0; i < length; i++)
-		_putchar(str[i]);
-
+		for (i = 0; i < length; i++)
+			_putchar(str[i]);
+	}
 	return (length);
 }
 
