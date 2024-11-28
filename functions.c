@@ -4,7 +4,7 @@
  * print_percentage - print the percentage character
  */
 
-int print_percentage(va_list ap __attribute__((unused))) // parameter ap deliberately not used
+int print_percentage(va_list ap __attribute__((unused)))
 {
 	int length = 1;
 
@@ -19,7 +19,8 @@ int print_percentage(va_list ap __attribute__((unused))) // parameter ap deliber
 int print_char(va_list ap) // ap means argument pointer
 {
 	int length = 1;
-	char c = va_arg(ap, int); // store an argument of type int from the variadic list ap
+	// store an argument of type int from the variadic list ap
+	char c = va_arg(ap, int);
 
 	write(1, &c, length);
 
@@ -37,7 +38,8 @@ int print_string(va_list ap)
 	if (str == NULL)
 		str = "(nil)";
 
-	while (str[length]) // calculate the length of the string
+	// calculate the length of the string
+	while (str[length])
 		length++;
 
 	write(1, str, length);
