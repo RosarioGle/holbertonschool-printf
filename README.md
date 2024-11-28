@@ -56,7 +56,7 @@ int main(void)
     return (0);
 }
 ```
-STDOUT:DE 
+STDOUT:
 ```makefile
 Decimal: 125
 Integer: 125
