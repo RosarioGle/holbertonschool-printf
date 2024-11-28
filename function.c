@@ -82,22 +82,28 @@ int print_percentage(va_list args __attribute__((unused)))
 int print_decimal(va_list args)
 {
 	int len = 1;
-	int cpy;
+	int num;
 
 	/* store an argument of type int from the variadic list args */
-	cpy = va_arg(args, int);
+	num = va_arg(args, int);
 	/* converts the number to positive and prints the character '-' */
-	if (cpy < 0)
+	if (num < 0)
 	{
-		cpy = -cpy;
+		num = -num;
 		_putchar('-');
 		len++;
 	}
-	_recur_int(cpy);
-	/* calculate the length of the number */
-	while (cpy > 9)
+	if (num == INT_MIN)
 	{
-		cpy = cpy / 10;
+		_putchar('2');
+		num = 147483648;
+		len++;
+	}
+	_recur_int(num);
+	/* calculate the length of the number */
+	while (num > 9)
+	{
+		num = num / 10;
 		len++;
 	}
 	return (len);
