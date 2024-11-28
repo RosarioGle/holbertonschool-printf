@@ -65,6 +65,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c tests/*.c -o test
 
 ## Flowchart
 
+![Flowchart (2)](https://github.com/user-attachments/assets/8a8646d3-83e6-49e9-86e1-8c93e8746a8f)
 
 ## Authors
 - Rosario Glé
