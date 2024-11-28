@@ -77,11 +77,6 @@ int main(void)
 
 	printf("-----------------------------\n");
 
-	result = _printf("Percent: %%\n");
-    printf("Expected output: Percent: %%\n");
-    printf("Characters printed by _printf: %d\n", result);
-	printf("-----------------------------\n");
-
     result = _printf("Character: %c\n", 'A');
     printf("Expected output: Character: A\n");
     printf("Characters printed by _printf: %d\n", result);
@@ -91,8 +86,20 @@ int main(void)
     printf("Expected output: String: Hello, world!\n");
     printf("Characters printed by _printf: %d\n", result);
 	printf("-----------------------------\n");
-
 ```
+STDOUT:
+```makefile
+-----------------------------
+Character: A
+Expected output: Character: A
+Characters printed by _printf: 13
+-----------------------------
+String: Hello, world!
+Expected output: String: Hello, world!
+Characters printed by _printf: 22
+-----------------------------
+```
+
 ## Flowchart
 
 
