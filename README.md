@@ -150,5 +150,5 @@ String: Hell, world!
 
 
 ## Authors
-- Rosario Glé
-- Nicolas Lassouane
+- Rosario GLÉ
+- Nicolas LASSOUANE
