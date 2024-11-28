@@ -33,6 +33,8 @@ int main(void)
     return (0);
 }
 ```
+Output:
+Hello, B! Welcome to School.
 
 Another usage of `_printf`:
 ```c
@@ -49,6 +51,10 @@ int main(void)
 Output:
 Decimal: 125
 Integer: 125
+
+## Man page
+Please visit this page:
+https://github.com/RosarioGle/holbertonschool-printf/blob/rosario/man_3_printf
 
 ## Testing
 1. Compile the files with the tests included:
