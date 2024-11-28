@@ -14,20 +14,19 @@
  * @f: the function pointer that calls the corresponding function
  */
 
-typedef struct spe
+typedef struct handler
 {
-	char spe;
-	int (*f)(va_list speci);
-} spe_t;
+	char specifier;
+	int (*function)(va_list args);
+} handler_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-int get_spe(const char *format, va_list speci);
-int print_char(va_list speci);
-int print_string(va_list speci);
+int print_char(va_list args);
+int print_string(va_list args);
 int _strlen(char *s);
-int print_percentage(va_list speci __attribute__((unused)));
-int print_decimal(va_list speci);
+int print_percentage(va_list args __attribute__((unused)));
+int print_decimal(va_list args);
 void _recur_int(int n);
 
 #endif
