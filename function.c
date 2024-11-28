@@ -3,14 +3,14 @@
 /**
  * print_char - print a char
  *
- * @args: the list
+ * @speci: the list
  *
  * Return: the number of character printed
  */
-int print_char(va_list args)
+int print_char(va_list speci)
 {
 	int length = 1;
-	char c = va_arg(args, int);
+	char c = va_arg(speci, int);
 
 	_putchar(c);
 
@@ -20,14 +20,14 @@ int print_char(va_list args)
 /**
  * print_string - print a string
  *
- * @args: the list
+ * @speci: the list
  *
  * Return: the number of character printed
  */
 
-int print_string(va_list args)
+int print_string(va_list speci)
 {
-	char *str = va_arg(args, char *);
+	char *str = va_arg(speci, char *);
 	int length = 0;
 	int i;
 
@@ -45,12 +45,12 @@ int print_string(va_list args)
 /**
  * print_percentage - print the percentage chracter
  *
- * @args: the list
+ * @speci: the list
  *
  * Return: the number of character printed
  */
 
-int print_percentage(va_list args __attribute__((unused)))
+int print_percentage(va_list sepci __attribute__((unused)))
 {
 	int len = 1;
 
@@ -61,17 +61,17 @@ int print_percentage(va_list args __attribute__((unused)))
 /**
  * print_decimal - print a decimal
  *
- * @args: the list
+ * @speci: the list
  *
  * Return: the number of character printed
  */
 
-int print_decimal(va_list args)
+int print_decimal(va_list speci)
 {
 	int len = 1;
 	int cpy;
 
-	cpy = va_arg(args, int);
+	cpy = va_arg(speci, int);
 	if (cpy < 0)
 	{
 		cpy = -cpy;
