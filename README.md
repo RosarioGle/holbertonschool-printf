@@ -109,14 +109,13 @@ Expected output: String: Hell, world!
 Characters printed by _printf: 22
 -----------------------------
 ```
-4. Memory testing with valgrind
+## Memory testing with valgrind
 You can use valgrind to check for potential memory leaks in your _printf program. Below is an example to perform memory tests.
 
-###Example:
 Compile the files:
 ```bash
 $ gcc -Wall -Wextra -Werror -pedantic _printf.c functions.c test.c -o my_printf
-````
+```
 
 To test printing a character:
 ```bash
