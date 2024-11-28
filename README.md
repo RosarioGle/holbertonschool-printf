@@ -6,6 +6,7 @@ This project implements a custom version of the `_printf` function in C, simulat
 ## Features
 - Supports format specifiers such as `%c`, `%s`, `%i`, `%d`.
 - Returns the total number of characters printed.
+- Handles errors.
 
 ## Requirements
 - A C compiler (e.g., `gcc`).
@@ -13,7 +14,7 @@ This project implements a custom version of the `_printf` function in C, simulat
 
 ## Installation
 1. Clone the repository:
-git clone https://github.com/username/project_printf.git
+git clone https://github.com/RosarioGle/holbertonschool-printf.git
 
 2. Navigate to the project folder with:
 cd holbertonschool-printf
@@ -32,11 +33,29 @@ int main(void)
     return (0);
 }
 ```
+
+Another usage of `_printf`:
+```c
+#include "main.h"
+
+int main(void)
+{
+    int nombre = 125;
+
+    _printf("Decimal: %d\nInteger: %i\n", nombre, nombre);
+    return (0);
+}
+```
 Output:
-Hello, B! Welcome to School.
+Decimal: 125
+Integer: 125
 
 ## Testing
+1. Compile the files with the tests included:
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c tests/*.c -o test_function
 
+2. Run the test:
+./test_function
 
 ## Flowchart
 
