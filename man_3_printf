@@ -1,0 +1,69 @@
+NAME
+
+	_printf - formatted output conversion
+
+SYNOPSIS
+
+	#include "main.h"
+	int _printf(const char *format, ...);
+
+DESCRIPTION
+
+	The _printf() function formats and displays text according to the format string specified in the character string format.
+	It accepts a list of arguments, which provides a great deal of flexibility in creating output formats.
+
+	This function supports an set of format specifiers, introduced by the character '%', which control how
+	the arguments are formatted and displayed.
+
+	For more detailed information, consult the documentation of the function printf(3) or the
+	specification of the function printf() of the standard C library.
+
+FORMAT SPECIFIERS
+
+	The following table lists the format specifiers supported by printf() :
+
+	+---------------+---------------------------------------------------------+
+	| Specifier     | 	              Description			  |
+	+---------------+---------------------------------------------------------+
+	|     %c	| Print a single character				  |
+	|     %s	| Print a string of characters				  |
+	|     %d	| Print a decimal					  |
+	|     %i	| Print an integer					  |
+	|     %%	| Print a character '%'					  |
+	+---------------+---------------------------------------------------------+
+
+EXAMPLES OF USAGE:
+
+	_printf("Exemple decimals: %d", 42);
+	_printf("Exemple character: %c", R);
+	_printf("Exemple string: %s", "I am the best");
+
+
+COMPLATION AND EXECUTE
+
+	$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
+	$ ./a.out
+
+EXEMPLE OF OUTPUT:
+
+	Examples decimals: 42
+	Examples character: R
+	Examples string: I am the best
+
+RETURN VALUE
+
+	The _printf() function returns the number of characters printed if it's successful. In case of an error, it return -1.
+
+ERRORS
+
+	If the format string is NULL or contains the character '%' without specifier, the function quits with an error code.
+
+AUTHORS
+
+	LASSOUANE Nicolas, GLE Rosario
+
+SEE ALSO
+
+	Man printf
+
+Source code available at: <https://github.com/RosarioGle/holbertonschool-printf/tree/main>
