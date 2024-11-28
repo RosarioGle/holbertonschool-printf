@@ -11,6 +11,7 @@
 int print_char(va_list args)
 {
 	int length = 1;
+	// store an argument of type int from the variadic list args
 	char c = va_arg(args, int);
 
 	_putchar(c);
@@ -28,6 +29,7 @@ int print_char(va_list args)
 
 int print_string(va_list args)
 {
+	// store an argument of type char * from the variadic list args
 	char *str = va_arg(args, char *);
 	int length = 0;
 	int i;
@@ -35,7 +37,8 @@ int print_string(va_list args)
 	if (!str)
 		str = "(nil)";
 	else
-	length = _strlen(str);
+		// calculate the length of the string
+		length = _strlen(str);
 
 	for (i = 0; i < length; i++)
 		_putchar(str[i]);
@@ -72,7 +75,9 @@ int print_decimal(va_list args)
 	int len = 1;
 	int cpy;
 
+	// store an argument of type int from the variadic list args
 	cpy = va_arg(args, int);
+	//converts the number to positive and prints the character '-'.
 	if (cpy < 0)
 	{
 		cpy = -cpy;
@@ -80,6 +85,7 @@ int print_decimal(va_list args)
 		len++;
 	}
 	_recur_int(cpy);
+	// calculate the length of the number
 	while (cpy > 9)
 	{
 		cpy = cpy / 10;
@@ -96,9 +102,11 @@ int print_decimal(va_list args)
 
 void _recur_int(int n)
 {
+	//divide the number by 10 until it is no longer divisible by 10
 	if (n / 10)
 	{
 		_recur_int(n / 10);
 	}
+	//print the last number of the number
 	_putchar(n % 10 + '0');
 }
