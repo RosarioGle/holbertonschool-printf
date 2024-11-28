@@ -14,13 +14,19 @@ This project implements a custom version of the `_printf` function in C, simulat
 
 ## Installation
 1. Clone the repository:
-git clone https://github.com/RosarioGle/holbertonschool-printf.git
+```bash
+$ git clone https://github.com/RosarioGle/holbertonschool-printf.git
+```
 
 2. Navigate to the project folder with:
-cd holbertonschool-printf
+```bash
+$ cd holbertonschool-printf
+```
 
 3. Compile the project folder with:
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+```bash
+$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+```
 
 ## Examples
 A simple usage of `_printf`:
@@ -62,12 +68,16 @@ https://github.com/RosarioGle/holbertonschool-printf/blob/rosario/man_3_printf
 
 ## Testing
 1. Compile the files with the tests included:
-gcc -Wall -Wextra -Werror -pedantic _printf.c functions.c test.c -o test
+```bash
+$ gcc -Wall -Wextra -Werror -pedantic _printf.c functions.c test.c -o test
+```
 
 2. Run the test:
-./test
+```bash
+$ ./test
+```
 
-3. Example:
+3. Example of test:
 ```c
 #include "main.h"
 
@@ -98,6 +108,43 @@ String: Hell, world!
 Expected output: String: Hell, world!
 Characters printed by _printf: 22
 -----------------------------
+```
+4. Memory testing with valgrind
+You can use valgrind to check for potential memory leaks in your _printf program. Below is an example to perform memory tests.
+
+###Example:
+Compile the files:
+```bash
+$ gcc -Wall -Wextra -Werror -pedantic _printf.c functions.c test.c -o my_printf
+````
+
+To test printing a character:
+```bash
+$ valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./my_printf 'Character: A'
+```
+Expected Output:
+```yaml
+Character: A
+==12345== 
+==12345== HEAP SUMMARY:
+==12345==     in use at exit: 0 bytes in 0 blocks
+==12345==   total heap usage: X allocs, X frees, Y bytes allocated
+==12345== 
+==12345== All heap blocks were freed -- no leaks are possible
+```
+To test printing a string:
+```bash
+valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./my_printf 'String: Hell, world!'
+```
+Expected Output:
+```yaml
+String: Hell, world!
+==12345== 
+==12345== HEAP SUMMARY:
+==12345==     in use at exit: 0 bytes in 0 blocks
+==12345==   total heap usage: X allocs, X frees, Y bytes allocated
+==12345== 
+==12345== All heap blocks were freed -- no leaks are possible
 ```
 
 ## Flowchart
